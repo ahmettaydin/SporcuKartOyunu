@@ -1,3 +1,8 @@
+import sporcular.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
 public class Test {
     public static void main(String[] args) {
         Game game = new Game();
@@ -84,6 +89,30 @@ public class Test {
         luka.setIkilik(90);
         luka.setUcluk(95);
         luka.setSerbestAtis(60);
+       
+        ArrayList<Sporcu> futbolcular = new ArrayList<Sporcu>();
+        futbolcular.add(messi);
+        futbolcular.add(ronaldo);
+        futbolcular.add(carlos);
+        futbolcular.add(neymar);
+        futbolcular.add(robben);
+        futbolcular.add(drogba);
+        futbolcular.add(metin);
+        futbolcular.add(suarez);
         
+        ArrayList<Sporcu> basketbolcular = new ArrayList<Sporcu>();
+        basketbolcular.add(harden);
+        basketbolcular.add(lebron);
+        basketbolcular.add(kobe);
+        basketbolcular.add(durant);
+        basketbolcular.add(curry);
+        basketbolcular.add(jordan);
+        basketbolcular.add(cedi);
+        basketbolcular.add(luka);
+        
+        Collections.shuffle(futbolcular);
+        Collections.shuffle(basketbolcular);
+        
+
     }
 }

@@ -1,7 +1,10 @@
+package sporcular;
+
 public abstract class Sporcu {
     private String sporcuIsim;
     private String sporcuTakim;
-
+    public boolean kartKullanildiMi;
+    
     public Sporcu() {
     }
 
@@ -10,7 +13,7 @@ public abstract class Sporcu {
         this.setSporcuTakim(sporcuTakim);
     }
     
-    public abstract void sporcuPuaniGoster();
+    public abstract int sporcuPuaniGoster(int i);
 
     public String getSporcuIsim() {
         return sporcuIsim;

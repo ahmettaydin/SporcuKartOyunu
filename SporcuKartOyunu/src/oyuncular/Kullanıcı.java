@@ -1,3 +1,7 @@
+package oyuncular;
+
+import sporcular.Sporcu;
+
 public class Kullanıcı extends Oyuncu{
 
     public Kullanıcı() {
@@ -6,9 +10,10 @@ public class Kullanıcı extends Oyuncu{
     public Kullanıcı(String oyucuID, String oyuncuAdi, int skor) {
         super(oyucuID, oyuncuAdi, skor);
     }
-
+    
     @Override
-    public void KartSec() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }  
+    public Sporcu KartSec() {
+        return null;
+    }
+    
 }

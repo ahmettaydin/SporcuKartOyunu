@@ -1,9 +1,9 @@
+package sporcular;
+
 public class Basketbolcu extends Sporcu{
-    int ikilik;
-    int ucluk;
-    int serbestAtis;
-    String basketbolcuAdi;
-    String basketbolcuTakim;
+    private int ikilik;
+    private int ucluk;
+    private int serbestAtis;
 
     public Basketbolcu() {
     }
@@ -14,8 +14,13 @@ public class Basketbolcu extends Sporcu{
 
     
     @Override
-    public void sporcuPuaniGoster() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public int sporcuPuaniGoster(int i) {
+        if(i==0) 
+            return ikilik;
+        else if(i==1)
+            return ucluk;
+        else
+            return serbestAtis;
     }
     
     boolean kartKullanildiMi;
