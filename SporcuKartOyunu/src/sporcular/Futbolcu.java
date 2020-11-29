@@ -5,13 +5,13 @@ public class Futbolcu extends Sporcu{
     private int penalti;
     private int serbestAtis;
     private int kaleciKarsiKarsiya;
-
+    
     public Futbolcu() {
     }
 
-    public Futbolcu(String futbolcuAdi, String futbolcuTakim) {
-        super(futbolcuAdi, futbolcuTakim);
-    }  
+    public Futbolcu(String sporcuIsim, String sporcuTakim, String resimYolu) {
+        super(sporcuIsim, sporcuTakim, resimYolu);
+    }
     
     @Override
     public int sporcuPuaniGoster(int i) {

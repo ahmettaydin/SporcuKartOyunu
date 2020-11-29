@@ -3,14 +3,24 @@ package sporcular;
 public abstract class Sporcu {
     private String sporcuIsim;
     private String sporcuTakim;
+    private String resimYolu;
+
+    public String getResimYolu() {
+        return resimYolu;
+    }
+
+    public void setResimYolu(String resimYolu) {
+        this.resimYolu = resimYolu;
+    }
     public boolean kartKullanildiMi;
     
     public Sporcu() {
     }
 
-    public Sporcu(String sporcuIsim, String sporcuTakim) {
+    public Sporcu(String sporcuIsim, String sporcuTakim, String resimYolu) {
         this.setSporcuIsim(sporcuIsim);
         this.setSporcuTakim(sporcuTakim);
+        this.setResimYolu(resimYolu);
     }
     
     public abstract int sporcuPuaniGoster(int i);

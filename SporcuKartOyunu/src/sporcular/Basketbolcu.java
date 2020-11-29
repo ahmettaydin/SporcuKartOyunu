@@ -1,6 +1,6 @@
 package sporcular;
 
-public class Basketbolcu extends Sporcu{
+public class Basketbolcu extends Sporcu {
     private int ikilik;
     private int ucluk;
     private int serbestAtis;
@@ -8,8 +8,8 @@ public class Basketbolcu extends Sporcu{
     public Basketbolcu() {
     }
 
-    public Basketbolcu(String sporcuIsim, String sporcuTakim) {
-        super(sporcuIsim, sporcuTakim);
+    public Basketbolcu(String sporcuIsim, String sporcuTakim, String resimYolu) {
+        super(sporcuIsim, sporcuTakim, resimYolu);
     } 
 
     

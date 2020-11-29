@@ -1,21 +1,21 @@
 import sporcular.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
+import oyuncular.*;
 
 public class Test {
     public static void main(String[] args) {
         Game game = new Game();
         game.setVisible(true);
         
-        Futbolcu messi = new Futbolcu("Lionel Messi", "Barcelona");
-        Futbolcu ronaldo = new Futbolcu("Christiano Ronaldo", "Juventus");
-        Futbolcu carlos = new Futbolcu("Roberto Carlos", "Fenerbahçe");
-        Futbolcu neymar = new Futbolcu("Neymar JR", "Paris");
-        Futbolcu robben = new Futbolcu("Arjen Robben", "Bayern Munich");
-        Futbolcu drogba = new Futbolcu("Didier Drogba", "Galatasaray");
-        Futbolcu metin = new Futbolcu("Metin Oktay", "Galatasaray");
-        Futbolcu suarez = new Futbolcu("Luis Suarez", "Barcelona");
+        Futbolcu messi = new Futbolcu("Lionel Messi", "Barcelona", "images/messi.png");
+        Futbolcu ronaldo = new Futbolcu("Christiano Ronaldo", "Juventus", "images/ronaldo.png");
+        Futbolcu carlos = new Futbolcu("Roberto Carlos", "Fenerbahçe", "images/carlos.png");
+        Futbolcu neymar = new Futbolcu("Neymar JR", "Paris", "images/neymar.png");
+        Futbolcu robben = new Futbolcu("Arjen Robben", "Bayern Munich", "images/robben.png");
+        Futbolcu feyyaz = new Futbolcu("Feyyaz Uçar", "Galatasaray", "images/feyyaz.png");
+        Futbolcu metin = new Futbolcu("Metin Oktay", "Galatasaray", "images/metin.png");
+        Futbolcu suarez = new Futbolcu("Luis Suarez", "Barcelona", "images/suarez.png");
         
         messi.setPenalti(100);
         messi.setSerbestAtis(75);
@@ -37,9 +37,9 @@ public class Test {
         robben.setSerbestAtis(95);
         robben.setKaleciKarsiKarsiya(90);
         
-        drogba.setPenalti(95);
-        drogba.setSerbestAtis(80);
-        drogba.setKaleciKarsiKarsiya(80);
+        feyyaz.setPenalti(95);
+        feyyaz.setSerbestAtis(80);
+        feyyaz.setKaleciKarsiKarsiya(80);
         
         metin.setPenalti(90);
         metin.setSerbestAtis(85);
@@ -49,14 +49,14 @@ public class Test {
         suarez.setSerbestAtis(70);
         suarez.setKaleciKarsiKarsiya(75);
         
-        Basketbolcu harden = new Basketbolcu("James Harden", "Housten Rockets");
-        Basketbolcu lebron = new Basketbolcu("Lebron James", "LA Lakers");
-        Basketbolcu kobe = new Basketbolcu("Kobe Bryant", "LA Lakers");
-        Basketbolcu durant = new Basketbolcu("Kevin Durant", "Brooklyn Nets");
-        Basketbolcu curry = new Basketbolcu("Stephen Curry", "Golden State");
-        Basketbolcu jordan = new Basketbolcu("Michael Jordan", "Chicago Bulls");
-        Basketbolcu cedi = new Basketbolcu("Cedi Osman", "Cleveland Cavailers");
-        Basketbolcu luka = new Basketbolcu("Luka Doncic", "Dallas Mavericks");
+        Basketbolcu harden = new Basketbolcu("James Harden", "Housten Rockets", "images/harden.png");
+        Basketbolcu lebron = new Basketbolcu("Lebron James", "LA Lakers", "images/lebron.png");
+        Basketbolcu kobe = new Basketbolcu("Kobe Bryant", "LA Lakers", "images/kobe.png");
+        Basketbolcu durant = new Basketbolcu("Kevin Durant", "Brooklyn Nets", "images/durant.png");
+        Basketbolcu curry = new Basketbolcu("Stephen Curry", "Golden State", "images/curry.png");
+        Basketbolcu jordan = new Basketbolcu("Michael Jordan", "Chicago Bulls", "images/jordan.png");
+        Basketbolcu cedi = new Basketbolcu("Cedi Osman", "Cleveland Cavailers", "images/cedi.png");
+        Basketbolcu luka = new Basketbolcu("Luka Doncic", "Dallas Mavericks", "images/luka.png");
         
         harden.setIkilik(70);
         harden.setUcluk(85);
@@ -96,7 +96,7 @@ public class Test {
         futbolcular.add(carlos);
         futbolcular.add(neymar);
         futbolcular.add(robben);
-        futbolcular.add(drogba);
+        futbolcular.add(feyyaz);
         futbolcular.add(metin);
         futbolcular.add(suarez);
         
@@ -113,6 +113,5 @@ public class Test {
         Collections.shuffle(futbolcular);
         Collections.shuffle(basketbolcular);
         
-
     }
 }

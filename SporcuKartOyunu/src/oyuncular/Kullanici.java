@@ -1,13 +1,15 @@
 package oyuncular;
 
+import java.util.ArrayList;
 import sporcular.Sporcu;
 
-public class Kullanıcı extends Oyuncu{
-
-    public Kullanıcı() {
+public class Kullanici extends Oyuncu{
+    
+    
+    public Kullanici() {
     }
 
-    public Kullanıcı(String oyucuID, String oyuncuAdi, int skor) {
+    public Kullanici(String oyucuID, String oyuncuAdi, int skor) {
         super(oyucuID, oyuncuAdi, skor);
     }
     

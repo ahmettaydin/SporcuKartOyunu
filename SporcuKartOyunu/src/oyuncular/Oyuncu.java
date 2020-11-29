@@ -9,6 +9,14 @@ public abstract class Oyuncu {
     int skor;
     
     ArrayList<Sporcu> sporcular = new ArrayList<Sporcu>();
+
+    public ArrayList<Sporcu> getSporcular() {
+        return sporcular;
+    }
+
+    public void setSporcular(ArrayList<Sporcu> sporcular) {
+        this.sporcular = sporcular;
+    }
     
     public Oyuncu() {
     }

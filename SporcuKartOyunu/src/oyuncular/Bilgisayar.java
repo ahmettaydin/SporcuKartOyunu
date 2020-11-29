@@ -1,10 +1,11 @@
 package oyuncular;
 
+import java.util.ArrayList;
 import java.util.Random;
 import sporcular.*;
 
 public class Bilgisayar extends Oyuncu{
-
+  
     public Bilgisayar() {
     }
 
