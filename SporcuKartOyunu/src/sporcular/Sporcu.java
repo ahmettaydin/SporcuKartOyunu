@@ -12,7 +12,18 @@ public abstract class Sporcu {
     public void setResimYolu(String resimYolu) {
         this.resimYolu = resimYolu;
     }
-    public boolean kartKullanildiMi;
+    private boolean kartKullanildiMi;
+
+    public boolean isKartKullanildiMi() {
+        return kartKullanildiMi;
+    }
+
+    public void setKartKullanildiMi(boolean kartKullanildiMi) {
+        this.kartKullanildiMi = kartKullanildiMi;
+    }
+    
+    
+    
     
     public Sporcu() {
     }

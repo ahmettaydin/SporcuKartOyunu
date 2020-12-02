@@ -26,7 +26,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="172" max="32767" attributes="0"/>
+              <EmptySpace pref="159" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -52,21 +52,21 @@
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel5" max="32767" attributes="0"/>
-                              <Component id="jLabel4" max="32767" attributes="0"/>
+                              <Component id="lblBigisayarSkor" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="btnBilgisayarKarsilasma" min="-2" pref="154" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel2" max="32767" attributes="0"/>
-                              <Component id="jLabel1" pref="175" max="32767" attributes="0"/>
+                              <Component id="lblOzellik" pref="175" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="btnKullaniciKarsilasma" min="-2" pref="154" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jLabel3" pref="378" max="32767" attributes="0"/>
-                              <Component id="jLabel6" max="32767" attributes="0"/>
+                              <Component id="lblKullaniciSkor" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       </Group>
@@ -101,7 +101,7 @@
                                   <Component id="btnKullanici5" min="-2" pref="154" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="btnKullanici6" min="-2" pref="154" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                   <Component id="btnKullanici7" min="-2" pref="154" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="btnKullanici8" min="-2" pref="154" max="-2" attributes="0"/>
@@ -133,19 +133,19 @@
                       <Group type="102" alignment="1" attributes="0">
                           <Component id="jLabel2" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="52" max="-2" attributes="0"/>
+                          <Component id="lblOzellik" min="-2" pref="52" max="-2" attributes="0"/>
                       </Group>
                       <Component id="btnKullaniciKarsilasma" min="-2" pref="232" max="-2" attributes="0"/>
                       <Component id="btnBilgisayarKarsilasma" alignment="1" min="-2" pref="232" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
                           <Component id="jLabel5" min="-2" pref="53" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                          <Component id="jLabel4" max="32767" attributes="0"/>
+                          <Component id="lblBigisayarSkor" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel3" min="-2" pref="53" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jLabel6" max="32767" attributes="0"/>
+                          <Component id="lblKullaniciSkor" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
@@ -169,8 +169,14 @@
       </Layout>
       <SubComponents>
         <Component class="javax.swing.JButton" name="btnKullanici6">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKullanici6ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnKullanici5">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKullanici5ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnKullanici3">
           <Events>
@@ -178,6 +184,9 @@
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnKullanici2">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKullanici2ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnKullanici1">
           <Events>
@@ -185,10 +194,19 @@
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnKullanici4">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKullanici4ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnKullanici7">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKullanici7ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnKullanici8">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnKullanici8ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnBilgisayar3">
         </Component>
@@ -216,7 +234,7 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnBilgisayar1">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="lblOzellik">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="18" style="3"/>
@@ -240,10 +258,10 @@
               <Font name="Tahoma" size="24" style="3"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="B&#x130;LG&#x130;SAYAR"/>
+            <Property name="text" type="java.lang.String" value="KULLANICI"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel4">
+        <Component class="javax.swing.JLabel" name="lblBigisayarSkor">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="48" style="3"/>
@@ -261,7 +279,7 @@
             <Property name="text" type="java.lang.String" value="B&#x130;LG&#x130;SAYAR"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel6">
+        <Component class="javax.swing.JLabel" name="lblKullaniciSkor">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="48" style="3"/>

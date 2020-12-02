@@ -5,8 +5,7 @@ import oyuncular.*;
 
 public class Test {
     public static void main(String[] args) {
-        Game game = new Game();
-        game.setVisible(true);
+       
         
         Futbolcu messi = new Futbolcu("Lionel Messi", "Barcelona", "images/messi.png");
         Futbolcu ronaldo = new Futbolcu("Christiano Ronaldo", "Juventus", "images/ronaldo.png");
@@ -56,7 +55,7 @@ public class Test {
         Basketbolcu curry = new Basketbolcu("Stephen Curry", "Golden State", "images/curry.png");
         Basketbolcu jordan = new Basketbolcu("Michael Jordan", "Chicago Bulls", "images/jordan.png");
         Basketbolcu cedi = new Basketbolcu("Cedi Osman", "Cleveland Cavailers", "images/cedi.png");
-        Basketbolcu luka = new Basketbolcu("Luka Doncic", "Dallas Mavericks", "images/luka.png");
+        Basketbolcu luka = new Basketbolcu("Luka Doncic", "Dallas Mavericks", "images/doncic.png");
         
         harden.setIkilik(70);
         harden.setUcluk(85);
@@ -113,5 +112,21 @@ public class Test {
         Collections.shuffle(futbolcular);
         Collections.shuffle(basketbolcular);
         
+        Kullanici kullanici=new Kullanici();
+        Bilgisayar bilgisayar =new Bilgisayar();
+        
+        for(int i=0;i<8;i++){
+            if(i<4){
+                kullanici.sporcular.add(futbolcular.get(i));
+                bilgisayar.sporcular.add(basketbolcular.get(i));
+            }else{
+                kullanici.sporcular.add(basketbolcular.get(i));
+                bilgisayar.sporcular.add(futbolcular.get(i));
+            }
+        }
+        
+        Game game = new Game(kullanici,bilgisayar);
+        game.setVisible(true);
+       
     }
 }

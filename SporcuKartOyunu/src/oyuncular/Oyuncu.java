@@ -8,7 +8,7 @@ public abstract class Oyuncu {
     String oyuncuAdi;
     int skor;
     
-    ArrayList<Sporcu> sporcular = new ArrayList<Sporcu>();
+   public  ArrayList<Sporcu> sporcular = new ArrayList<Sporcu>();
 
     public ArrayList<Sporcu> getSporcular() {
         return sporcular;
@@ -40,6 +40,17 @@ public abstract class Oyuncu {
     public int SkorGoster() {
         return skor;
     }
+
+    public int getSkor() {
+        return skor;
+    }
+
+    public void setSkor(int skor) {
+        this.skor = skor;
+    }
     
-    public abstract Sporcu KartSec();
+    
+    public  int KartSec(int deger){
+        return -1;
+    }
 }

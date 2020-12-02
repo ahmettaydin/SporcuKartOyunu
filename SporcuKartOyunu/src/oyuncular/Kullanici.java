@@ -13,9 +13,6 @@ public class Kullanici extends Oyuncu{
         super(oyucuID, oyuncuAdi, skor);
     }
     
-    @Override
-    public Sporcu KartSec() {
-        return null;
-    }
+    
     
 }

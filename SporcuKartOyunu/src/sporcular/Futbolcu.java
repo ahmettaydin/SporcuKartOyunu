@@ -6,6 +6,8 @@ public class Futbolcu extends Sporcu{
     private int serbestAtis;
     private int kaleciKarsiKarsiya;
     
+    
+    
     public Futbolcu() {
     }
 

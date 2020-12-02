@@ -13,24 +13,55 @@ public class Bilgisayar extends Oyuncu{
         super(oyucuID, oyuncuAdi, skor);
     }
     
-    @Override
-    public Sporcu KartSec() {
+    public void kartKullan(Sporcu sporcu){
+       
+       sporcu.setKartKullanildiMi(true);
         
-        int k = new Random().nextInt(this.kartSayisi());
+    }
+    
+    @Override
+    public int KartSec(int deger) {
+        
+        int k ; 
 
 	int count = 0;
-	for (int i = 0; i < this.sporcular.size(); i++)
+        if(deger ==1){
+            k=new Random().nextInt(4);
+            
+            for (int i = 0; i < 4; i++)
 	{
-		if (this.sporcular.get(i) == null || this.sporcular.get(i).kartKullanildiMi)
+		if (this.sporcular.get(i) == null || this.sporcular.get(i).isKartKullanildiMi())
 			continue;
 
 		if (count == k)
 		{
-			return this.sporcular.get(i);
+			return k;
+		}
+		count++;
+                
+            
+	  }
+        }
+	
+        
+        
+        else {
+            k=new Random().nextInt(4)+4;
+             for (int i = 0; i < this.sporcular.size(); i++)
+	{
+		if (this.sporcular.get(i) == null || this.sporcular.get(i).isKartKullanildiMi())
+			continue;
+
+		if (count == k)
+		{
+			return k ;
 		}
 		count++;
 	}
+             
+        }
+       
         
-        return null;
+        return -1;
     }
 }

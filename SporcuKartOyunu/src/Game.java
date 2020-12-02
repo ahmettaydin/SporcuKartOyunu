@@ -1,12 +1,45 @@
+
+import java.util.Random;
+import oyuncular.Bilgisayar;
+import oyuncular.Kullanici;
+import sporcular.Sporcu;
+
 public class Game extends javax.swing.JFrame {
 
     /**
      * Creates new form Game
      */
-    String resimYolu="images/feyyaz.png";
-    public Game() {
+    Kullanici kullanici;
+    Bilgisayar bilgisayar;
+    String futbolcuArka="images/futbolcuArka.png";
+    String basketbolcuArka="images/basketbolcuArka.png";
+    public Game(Kullanici kullanici,Bilgisayar bilgisayar) {
         initComponents();
-        btnKullanici1.setIcon(new javax.swing.ImageIcon(getClass().getResource(resimYolu)));
+        this.kullanici =kullanici;
+        this.bilgisayar=bilgisayar;
+        
+      btnKullanici1.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(0).getResimYolu())));
+      btnKullanici2.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(1).getResimYolu())));
+      btnKullanici3.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(2).getResimYolu())));
+      btnKullanici4.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(3).getResimYolu())));
+      btnKullanici5.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(4).getResimYolu())));
+      btnKullanici6.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(5).getResimYolu())));
+      btnKullanici7.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(6).getResimYolu())));
+      btnKullanici8.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(7).getResimYolu())));
+      
+      btnBilgisayar1.setIcon(new javax.swing.ImageIcon(getClass().getResource(basketbolcuArka)));
+      btnBilgisayar2.setIcon(new javax.swing.ImageIcon(getClass().getResource(basketbolcuArka)));
+      btnBilgisayar3.setIcon(new javax.swing.ImageIcon(getClass().getResource(basketbolcuArka)));
+      btnBilgisayar4.setIcon(new javax.swing.ImageIcon(getClass().getResource(basketbolcuArka)));
+      btnBilgisayar5.setIcon(new javax.swing.ImageIcon(getClass().getResource(futbolcuArka)));
+      btnBilgisayar6.setIcon(new javax.swing.ImageIcon(getClass().getResource(futbolcuArka)));
+      btnBilgisayar7.setIcon(new javax.swing.ImageIcon(getClass().getResource(futbolcuArka)));
+      btnBilgisayar8.setIcon(new javax.swing.ImageIcon(getClass().getResource(futbolcuArka)));
+        
+    }
+
+    private Game() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     /** 
@@ -37,14 +70,26 @@ public class Game extends javax.swing.JFrame {
         btnBilgisayar2 = new javax.swing.JButton();
         btnBilgisayarKarsilasma = new javax.swing.JButton();
         btnBilgisayar1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblOzellik = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        lblBigisayarSkor = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        lblKullaniciSkor = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btnKullanici6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKullanici6ActionPerformed(evt);
+            }
+        });
+
+        btnKullanici5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKullanici5ActionPerformed(evt);
+            }
+        });
 
         btnKullanici3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -52,9 +97,33 @@ public class Game extends javax.swing.JFrame {
             }
         });
 
+        btnKullanici2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKullanici2ActionPerformed(evt);
+            }
+        });
+
         btnKullanici1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKullanici1ActionPerformed(evt);
+            }
+        });
+
+        btnKullanici4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKullanici4ActionPerformed(evt);
+            }
+        });
+
+        btnKullanici7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKullanici7ActionPerformed(evt);
+            }
+        });
+
+        btnKullanici8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKullanici8ActionPerformed(evt);
             }
         });
 
@@ -70,9 +139,9 @@ public class Game extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Seçilen Özellik");
+        lblOzellik.setFont(new java.awt.Font("Tahoma", 3, 18)); // NOI18N
+        lblOzellik.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblOzellik.setText("Seçilen Özellik");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 3, 48)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -80,19 +149,19 @@ public class Game extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("BİLGİSAYAR");
+        jLabel3.setText("KULLANICI");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 3, 48)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Skor");
+        lblBigisayarSkor.setFont(new java.awt.Font("Tahoma", 3, 48)); // NOI18N
+        lblBigisayarSkor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblBigisayarSkor.setText("Skor");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 3, 24)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("BİLGİSAYAR");
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 3, 48)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Skor");
+        lblKullaniciSkor.setFont(new java.awt.Font("Tahoma", 3, 48)); // NOI18N
+        lblKullaniciSkor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblKullaniciSkor.setText("Skor");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -104,19 +173,19 @@ public class Game extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(lblBigisayarSkor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addComponent(btnBilgisayarKarsilasma, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE))
+                            .addComponent(lblOzellik, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(btnKullaniciKarsilasma, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 378, Short.MAX_VALUE)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(lblKullaniciSkor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(20, 20, 20))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,7 +217,7 @@ public class Game extends javax.swing.JFrame {
                                 .addComponent(btnKullanici5, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnKullanici6, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
+                                .addGap(31, 31, 31)
                                 .addComponent(btnKullanici7, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btnKullanici8, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -173,17 +242,17 @@ public class Game extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblOzellik, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnKullaniciKarsilasma, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBilgisayarKarsilasma, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(lblBigisayarSkor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(lblKullaniciSkor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(40, 40, 40)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnKullanici8, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -205,7 +274,7 @@ public class Game extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(172, Short.MAX_VALUE))
+                .addContainerGap(159, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,13 +296,71 @@ public class Game extends javax.swing.JFrame {
     }//GEN-LAST:event_btnBilgisayar7ActionPerformed
 
     private void btnKullanici3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici3ActionPerformed
-        // TODO add your handling code here:
+        btnKullanici3.setEnabled(false);
+        btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(2).getResimYolu())));        // TODO add your handling code here:
     }//GEN-LAST:event_btnKullanici3ActionPerformed
 
     private void btnKullanici1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici1ActionPerformed
+
         btnKullanici1.setEnabled(false);
-        btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource("images/feyyaz.png")));
+        btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(0).getResimYolu())));
+        
+        int i=bilgisayar.KartSec(0);
+        btnBilgisayarKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(bilgisayar.sporcular.get(i).getResimYolu())));
+        int r=new Random().nextInt(3);
+        
+        lblOzellik.setText(ozellikSec0(r));
+       int k = karsilastir(kullanici.sporcular.get(0),bilgisayar.sporcular.get(i),r);
+       
+       if(k ==0){
+           kullanici.setSkor(kullanici.getSkor()+1);
+       }else if(k ==1){
+           bilgisayar.setSkor(bilgisayar.getSkor()+1);
+       }
+       
+       lblKullaniciSkor.setText(Integer.toString(kullanici.getSkor()));
+       lblBigisayarSkor.setText(Integer.toString(bilgisayar.getSkor()));
+        
+        
+        
     }//GEN-LAST:event_btnKullanici1ActionPerformed
+
+    private void btnKullanici2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici2ActionPerformed
+        // TODO add your handling code here
+      btnKullanici2.setEnabled(false);
+        btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(1).getResimYolu())));
+    }//GEN-LAST:event_btnKullanici2ActionPerformed
+
+    private void btnKullanici4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici4ActionPerformed
+
+             // TODO add your handling code here:
+             btnKullanici4.setEnabled(false);
+        btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(3).getResimYolu())));
+    }//GEN-LAST:event_btnKullanici4ActionPerformed
+
+    private void btnKullanici5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici5ActionPerformed
+        // TODO add your handling code here:
+        btnKullanici5.setEnabled(false);
+        btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(4).getResimYolu())));
+    }//GEN-LAST:event_btnKullanici5ActionPerformed
+
+    private void btnKullanici6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici6ActionPerformed
+        // TODO add your handling code here:
+        btnKullanici6.setEnabled(false);
+        btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(5).getResimYolu())));
+    }//GEN-LAST:event_btnKullanici6ActionPerformed
+
+    private void btnKullanici7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici7ActionPerformed
+        // TODO add your handling code here:
+        btnKullanici7.setEnabled(false);
+        btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(6).getResimYolu())));
+    }//GEN-LAST:event_btnKullanici7ActionPerformed
+
+    private void btnKullanici8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici8ActionPerformed
+        // TODO add your handling code here:
+        btnKullanici8.setEnabled(false);
+        btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(7).getResimYolu())));
+    }//GEN-LAST:event_btnKullanici8ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -269,6 +396,29 @@ public class Game extends javax.swing.JFrame {
             }
         });
     }
+    
+    public String ozellikSec0(int i){
+        
+        if(i ==0){
+            return "PENALTI";
+        }else if(i==1){
+            return  "SERBEST ATIŞ";
+        }else{
+            return "KARŞI KARŞIYA";
+        }
+   
+    }
+    public int karsilastir(Sporcu kullanici,Sporcu bilgisayar,int i){
+        if(kullanici.sporcuPuaniGoster(i)>bilgisayar.sporcuPuaniGoster(i)){
+            return 0;
+        }else if(kullanici.sporcuPuaniGoster(i)<bilgisayar.sporcuPuaniGoster(i)){
+            return 1;
+        }else 
+            return -1;
+            
+    }
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBilgisayar1;
@@ -289,12 +439,12 @@ public class Game extends javax.swing.JFrame {
     private javax.swing.JButton btnKullanici7;
     private javax.swing.JButton btnKullanici8;
     private javax.swing.JButton btnKullaniciKarsilasma;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblBigisayarSkor;
+    private javax.swing.JLabel lblKullaniciSkor;
+    private javax.swing.JLabel lblOzellik;
     // End of variables declaration//GEN-END:variables
 }

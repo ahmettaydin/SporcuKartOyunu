@@ -4,6 +4,8 @@ public class Basketbolcu extends Sporcu {
     private int ikilik;
     private int ucluk;
     private int serbestAtis;
+    
+    
 
     public Basketbolcu() {
     }
