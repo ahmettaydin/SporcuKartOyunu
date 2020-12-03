@@ -26,42 +26,38 @@ public class Bilgisayar extends Oyuncu{
 
 	int count = 0;
         if(deger ==1){
-            k=new Random().nextInt(4);
             
-            for (int i = 0; i < 4; i++)
-	{
-		if (this.sporcular.get(i) == null || this.sporcular.get(i).isKartKullanildiMi())
-			continue;
-
-		if (count == k)
-		{
-			return k;
-		}
-		count++;
+            
+            while (true) 
                 
-            
+	{      
+            k=new Random().nextInt(4);
+		if (this.sporcular.get(k) == null || this.sporcular.get(k).isKartKullanildiMi())
+			continue;
+                else{
+                    kartKullan(this.sporcular.get(k));
+                    return k;
+                }
+                    
 	  }
         }
 	
         
         
         else {
-            k=new Random().nextInt(4)+4;
-             for (int i = 0; i < this.sporcular.size(); i++)
-	{
-		if (this.sporcular.get(i) == null || this.sporcular.get(i).isKartKullanildiMi())
+            
+             while(true)
+	{       k=new Random().nextInt(4)+4;
+		if (this.sporcular.get(k) == null || this.sporcular.get(k).isKartKullanildiMi())
 			continue;
-
-		if (count == k)
-		{
-			return k ;
-		}
-		count++;
+                else{
+                    kartKullan(this.sporcular.get(k));
+                    return k;
+                }
 	}
              
         }
        
         
-        return -1;
     }
 }

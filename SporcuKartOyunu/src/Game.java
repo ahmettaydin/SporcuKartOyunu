@@ -13,6 +13,8 @@ public class Game extends javax.swing.JFrame {
     Bilgisayar bilgisayar;
     String futbolcuArka="images/futbolcuArka.png";
     String basketbolcuArka="images/basketbolcuArka.png";
+    boolean futbolcuMu=true;
+   
     public Game(Kullanici kullanici,Bilgisayar bilgisayar) {
         initComponents();
         this.kullanici =kullanici;
@@ -293,20 +295,23 @@ public class Game extends javax.swing.JFrame {
 
     private void btnBilgisayar7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBilgisayar7ActionPerformed
         // TODO add your handling code here:
+      
     }//GEN-LAST:event_btnBilgisayar7ActionPerformed
 
     private void btnKullanici3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici3ActionPerformed
-        btnKullanici3.setEnabled(false);
-        btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(2).getResimYolu())));        // TODO add your handling code here:
-    }//GEN-LAST:event_btnKullanici3ActionPerformed
-
-    private void btnKullanici1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici1ActionPerformed
-
-        btnKullanici1.setEnabled(false);
-        btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(0).getResimYolu())));
-        
+     
+        int sayac=0;
+        for(Sporcu sporcu:bilgisayar.sporcular){
+            if(sporcu.isKartKullanildiMi()==false){
+                sayac++;
+            }
+        }
+        if(futbolcuMu||sayac==1){
+            btnKullanici3.setEnabled(false);
+        btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(2).getResimYolu())));    
         int i=bilgisayar.KartSec(0);
         btnBilgisayarKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(bilgisayar.sporcular.get(i).getResimYolu())));
+        bilgisayarKartAt(i);
         int r=new Random().nextInt(3);
         
         lblOzellik.setText(ozellikSec0(r));
@@ -316,10 +321,59 @@ public class Game extends javax.swing.JFrame {
            kullanici.setSkor(kullanici.getSkor()+1);
        }else if(k ==1){
            bilgisayar.setSkor(bilgisayar.getSkor()+1);
+       }else{
+          btnKullaniciKarsilasma.setIcon(null);
+          btnBilgisayarKarsilasma.setIcon(null);
+           bilgisayarKartTopla(i);
+          btnKullanici3.setEnabled(true);
+          bilgisayar.sporcular.get(i).setKartKullanildiMi(false);
        }
        
        lblKullaniciSkor.setText(Integer.toString(kullanici.getSkor()));
        lblBigisayarSkor.setText(Integer.toString(bilgisayar.getSkor()));
+       futbolcuMu= false;
+        }
+        
+// TODO add your handling code here:
+    }//GEN-LAST:event_btnKullanici3ActionPerformed
+
+    private void btnKullanici1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici1ActionPerformed
+
+        int sayac=0;
+        for(Sporcu sporcu:bilgisayar.sporcular){
+            if(sporcu.isKartKullanildiMi()==false){
+                sayac++;
+            }
+        }
+        if(futbolcuMu||sayac==1){
+            btnKullanici1.setEnabled(false);
+        btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(0).getResimYolu())));
+        
+        int i=bilgisayar.KartSec(0);
+        btnBilgisayarKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(bilgisayar.sporcular.get(i).getResimYolu())));
+        bilgisayarKartAt(i);
+        int r=new Random().nextInt(3);
+        
+        lblOzellik.setText(ozellikSec0(r));
+       int k = karsilastir(kullanici.sporcular.get(0),bilgisayar.sporcular.get(i),r);
+       
+       if(k ==0){
+           kullanici.setSkor(kullanici.getSkor()+1);
+       }else if(k ==1){
+           bilgisayar.setSkor(bilgisayar.getSkor()+1);
+       }else{
+          btnKullaniciKarsilasma.setIcon(null);
+          btnBilgisayarKarsilasma.setIcon(null);
+           bilgisayarKartTopla(i);
+          btnKullanici1.setEnabled(true);
+           bilgisayar.sporcular.get(i).setKartKullanildiMi(false);
+       }
+       
+       lblKullaniciSkor.setText(Integer.toString(kullanici.getSkor()));
+       lblBigisayarSkor.setText(Integer.toString(bilgisayar.getSkor()));
+       futbolcuMu=false;
+        }
+        
         
         
         
@@ -327,39 +381,240 @@ public class Game extends javax.swing.JFrame {
 
     private void btnKullanici2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici2ActionPerformed
         // TODO add your handling code here
-      btnKullanici2.setEnabled(false);
+        
+        int sayac=0;
+        for(Sporcu sporcu:bilgisayar.sporcular){
+            if(sporcu.isKartKullanildiMi()==false){
+                sayac++;
+            }
+        }
+        if(futbolcuMu||sayac==1){
+            
+            btnKullanici2.setEnabled(false);
         btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(1).getResimYolu())));
+        
+        int i=bilgisayar.KartSec(0);
+        btnBilgisayarKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(bilgisayar.sporcular.get(i).getResimYolu())));
+        bilgisayarKartAt(i);
+        int r=new Random().nextInt(3);
+        
+        lblOzellik.setText(ozellikSec0(r));
+       int k = karsilastir(kullanici.sporcular.get(0),bilgisayar.sporcular.get(i),r);
+       
+       if(k ==0){
+           kullanici.setSkor(kullanici.getSkor()+1);
+       }else if(k ==1){
+           bilgisayar.setSkor(bilgisayar.getSkor()+1);
+       }else{
+          btnKullaniciKarsilasma.setIcon(null);
+          btnBilgisayarKarsilasma.setIcon(null);
+           bilgisayarKartTopla(i);
+          btnKullanici2.setEnabled(true);
+           bilgisayar.sporcular.get(i).setKartKullanildiMi(false);
+       }
+       
+       lblKullaniciSkor.setText(Integer.toString(kullanici.getSkor()));
+       lblBigisayarSkor.setText(Integer.toString(bilgisayar.getSkor()));
+       futbolcuMu= false;
+        }
+      
     }//GEN-LAST:event_btnKullanici2ActionPerformed
 
     private void btnKullanici4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici4ActionPerformed
 
-             // TODO add your handling code here:
-             btnKullanici4.setEnabled(false);
+             int sayac=0;
+        for(Sporcu sporcu:bilgisayar.sporcular){
+            if(sporcu.isKartKullanildiMi()==false){
+                sayac++;
+            }
+        }
+             if(futbolcuMu||sayac==1){
+                 btnKullanici4.setEnabled(false);
         btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(3).getResimYolu())));
+        
+        int i=bilgisayar.KartSec(0);
+        btnBilgisayarKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(bilgisayar.sporcular.get(i).getResimYolu())));
+        bilgisayarKartAt(i);
+        int r=new Random().nextInt(3);
+        
+        lblOzellik.setText(ozellikSec0(r));
+       int k = karsilastir(kullanici.sporcular.get(0),bilgisayar.sporcular.get(i),r);
+       
+       if(k ==0){
+           kullanici.setSkor(kullanici.getSkor()+1);
+       }else if(k ==1){
+           bilgisayar.setSkor(bilgisayar.getSkor()+1);
+       }else{
+          btnKullaniciKarsilasma.setIcon(null);
+          btnBilgisayarKarsilasma.setIcon(null);
+           bilgisayarKartTopla(i);
+          btnKullanici4.setEnabled(true);
+           bilgisayar.sporcular.get(i).setKartKullanildiMi(false);
+       }
+       
+       lblKullaniciSkor.setText(Integer.toString(kullanici.getSkor()));
+       lblBigisayarSkor.setText(Integer.toString(bilgisayar.getSkor()));
+       futbolcuMu =false;
+             }
+             
     }//GEN-LAST:event_btnKullanici4ActionPerformed
 
     private void btnKullanici5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici5ActionPerformed
-        // TODO add your handling code here:
-        btnKullanici5.setEnabled(false);
+        int sayac=0;
+        for(Sporcu sporcu:bilgisayar.sporcular){
+            if(sporcu.isKartKullanildiMi()==false){
+                sayac++;
+            }
+        }
+        if(!futbolcuMu||sayac==1){
+            btnKullanici5.setEnabled(false);
         btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(4).getResimYolu())));
+        
+        int i=bilgisayar.KartSec(1);
+        btnBilgisayarKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(bilgisayar.sporcular.get(i).getResimYolu())));
+        bilgisayarKartAt(i);
+        int r=new Random().nextInt(3);
+        
+        lblOzellik.setText(ozellikSec1(r));
+       int k = karsilastir(kullanici.sporcular.get(0),bilgisayar.sporcular.get(i),r);
+       
+       if(k ==0){
+           kullanici.setSkor(kullanici.getSkor()+1);
+       }else if(k ==1){
+           bilgisayar.setSkor(bilgisayar.getSkor()+1);
+       }else{
+          btnKullaniciKarsilasma.setIcon(null);
+          btnBilgisayarKarsilasma.setIcon(null);
+           bilgisayarKartTopla(i);
+          btnKullanici5.setEnabled(true);
+           bilgisayar.sporcular.get(i).setKartKullanildiMi(false);
+       }
+       
+       lblKullaniciSkor.setText(Integer.toString(kullanici.getSkor()));
+       lblBigisayarSkor.setText(Integer.toString(bilgisayar.getSkor()));
+       futbolcuMu=true;
+        }
+        
+        
     }//GEN-LAST:event_btnKullanici5ActionPerformed
 
     private void btnKullanici6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici6ActionPerformed
         // TODO add your handling code here:
-        btnKullanici6.setEnabled(false);
+        int sayac=0;
+        for(Sporcu sporcu:bilgisayar.sporcular){
+            if(sporcu.isKartKullanildiMi()==false){
+                sayac++;
+            }
+        }
+        if(!futbolcuMu||sayac==1){
+            btnKullanici6.setEnabled(false);
         btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(5).getResimYolu())));
+         
+        int i=bilgisayar.KartSec(1);
+        btnBilgisayarKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(bilgisayar.sporcular.get(i).getResimYolu())));
+        bilgisayarKartAt(i);
+        int r=new Random().nextInt(3);
+        
+        lblOzellik.setText(ozellikSec1(r));
+       int k = karsilastir(kullanici.sporcular.get(0),bilgisayar.sporcular.get(i),r);
+       
+       if(k ==0){
+           kullanici.setSkor(kullanici.getSkor()+1);
+       }else if(k ==1){
+           bilgisayar.setSkor(bilgisayar.getSkor()+1);
+       }else{
+          btnKullaniciKarsilasma.setIcon(null);
+          btnBilgisayarKarsilasma.setIcon(null);
+           bilgisayarKartTopla(i);
+          btnKullanici6.setEnabled(true);
+           bilgisayar.sporcular.get(i).setKartKullanildiMi(false);
+       }
+       
+       lblKullaniciSkor.setText(Integer.toString(kullanici.getSkor()));
+       lblBigisayarSkor.setText(Integer.toString(bilgisayar.getSkor()));
+       futbolcuMu=true;
+        }
+        
     }//GEN-LAST:event_btnKullanici6ActionPerformed
 
     private void btnKullanici7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici7ActionPerformed
         // TODO add your handling code here:
-        btnKullanici7.setEnabled(false);
+        int sayac=0;
+        for(Sporcu sporcu:bilgisayar.sporcular){
+            if(sporcu.isKartKullanildiMi()==false){
+                sayac++;
+            }
+        }
+        if(!futbolcuMu||sayac==1){
+             btnKullanici7.setEnabled(false);
         btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(6).getResimYolu())));
+         
+        int i=bilgisayar.KartSec(1);
+        btnBilgisayarKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(bilgisayar.sporcular.get(i).getResimYolu())));
+        bilgisayarKartAt(i);
+        int r=new Random().nextInt(3);
+        
+        lblOzellik.setText(ozellikSec1(r));
+       int k = karsilastir(kullanici.sporcular.get(0),bilgisayar.sporcular.get(i),r);
+       
+       if(k ==0){
+           kullanici.setSkor(kullanici.getSkor()+1);
+       }else if(k ==1){
+           bilgisayar.setSkor(bilgisayar.getSkor()+1);
+       }else{
+          btnKullaniciKarsilasma.setIcon(null);
+          btnBilgisayarKarsilasma.setIcon(null);
+           bilgisayarKartTopla(i);
+          btnKullanici7.setEnabled(true);
+           bilgisayar.sporcular.get(i).setKartKullanildiMi(false);
+       }
+       
+       lblKullaniciSkor.setText(Integer.toString(kullanici.getSkor()));
+       lblBigisayarSkor.setText(Integer.toString(bilgisayar.getSkor()));
+       futbolcuMu =true;
+        }
+       
     }//GEN-LAST:event_btnKullanici7ActionPerformed
 
     private void btnKullanici8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici8ActionPerformed
         // TODO add your handling code here:
-        btnKullanici8.setEnabled(false);
+        int sayac=0;
+        for(Sporcu sporcu:bilgisayar.sporcular){
+            if(sporcu.isKartKullanildiMi()==false){
+                sayac++;
+            }
+        }
+        if(!futbolcuMu||sayac==1){
+            btnKullanici8.setEnabled(false);
         btnKullaniciKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(kullanici.sporcular.get(7).getResimYolu())));
+         
+        int i=bilgisayar.KartSec(1);
+        btnBilgisayarKarsilasma.setIcon(new javax.swing.ImageIcon(getClass().getResource(bilgisayar.sporcular.get(i).getResimYolu())));
+        bilgisayarKartAt(i);
+        int r=new Random().nextInt(3);
+        
+        lblOzellik.setText(ozellikSec1(r));
+       int k = karsilastir(kullanici.sporcular.get(0),bilgisayar.sporcular.get(i),r);
+       
+       if(k ==0){
+           kullanici.setSkor(kullanici.getSkor()+1);
+       }else if(k ==1){
+           bilgisayar.setSkor(bilgisayar.getSkor()+1);
+       }else{
+          btnKullaniciKarsilasma.setIcon(null);
+          btnBilgisayarKarsilasma.setIcon(null);
+           bilgisayarKartTopla(i);
+          btnKullanici8.setEnabled(true);
+           bilgisayar.sporcular.get(i).setKartKullanildiMi(false);
+          
+          
+       }
+       
+       lblKullaniciSkor.setText(Integer.toString(kullanici.getSkor()));
+       lblBigisayarSkor.setText(Integer.toString(bilgisayar.getSkor()));
+       futbolcuMu=true;
+        }
+        
     }//GEN-LAST:event_btnKullanici8ActionPerformed
 
     /**
@@ -402,12 +657,27 @@ public class Game extends javax.swing.JFrame {
         if(i ==0){
             return "PENALTI";
         }else if(i==1){
-            return  "SERBEST ATIŞ";
+            return  "SERBEST VURUŞ";
         }else{
             return "KARŞI KARŞIYA";
         }
+        
    
     }
+    
+     public String ozellikSec1(int i){
+        
+        if(i ==0){
+            return "İKİLİK";
+        }else if(i==1){
+            return  "ÜÇLÜK";
+        }else{
+            return "SERBEST ATIŞ";
+        }
+        
+   
+    }
+            
     public int karsilastir(Sporcu kullanici,Sporcu bilgisayar,int i){
         if(kullanici.sporcuPuaniGoster(i)>bilgisayar.sporcuPuaniGoster(i)){
             return 0;
@@ -416,6 +686,69 @@ public class Game extends javax.swing.JFrame {
         }else 
             return -1;
             
+    }
+    
+    public void bilgisayarKartAt(int i){
+        switch (i) {
+            case 0:
+                btnBilgisayar1.setEnabled(false);
+                break;
+            case 1:
+                btnBilgisayar2.setEnabled(false);
+                break;
+            case 2:
+                btnBilgisayar3.setEnabled(false);
+                break;
+            case 3:
+                btnBilgisayar4.setEnabled(false);
+                break;
+            case 4:
+                btnBilgisayar5.setEnabled(false);
+                break;
+            case 5:
+                btnBilgisayar6.setEnabled(false);
+                break;
+            case 6:
+                btnBilgisayar7.setEnabled(false);
+                break;
+            case 7:
+                btnBilgisayar8.setEnabled(false);
+                break;
+            default:
+                break;
+        }
+    }
+    
+       public void bilgisayarKartTopla(int i){
+        switch (i) {
+            case 0:
+                btnBilgisayar1.setEnabled(true);
+                break;
+            case 1:
+                btnBilgisayar2.setEnabled(true);
+                break;
+            case 2:
+                btnBilgisayar3.setEnabled(true);
+                break;
+            case 3:
+                btnBilgisayar4.setEnabled(true);
+                break;
+            case 4:
+                btnBilgisayar5.setEnabled(true);
+                break;
+            case 5:
+                btnBilgisayar6.setEnabled(true);
+                break;
+            case 6:
+                btnBilgisayar7.setEnabled(true);
+                break;
+            case 7:
+                btnBilgisayar8.setEnabled(true);
+                break;
+            default:
+                break;
+        }
+           
     }
     
     
