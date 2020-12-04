@@ -1,8 +1,5 @@
 package oyuncular;
 
-import java.util.ArrayList;
-import sporcular.Sporcu;
-
 public class Kullanici extends Oyuncu{
     
     
