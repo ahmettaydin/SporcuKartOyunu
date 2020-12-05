@@ -5,37 +5,35 @@ import sporcular.Sporcu;
 
 public abstract class Oyuncu {
 
-    String oyucuID;
-    String oyuncuAdi;
-    int skor;
+    private String oyucuID;
+    private String oyuncuAdi;
+    private int skor;
 
     public ArrayList<Sporcu> sporcular = new ArrayList<Sporcu>();
 
-    public ArrayList<Sporcu> getSporcular() {
-        return sporcular;
-    }
-
-    public void setSporcular(ArrayList<Sporcu> sporcular) {
-        this.sporcular = sporcular;
-    }
-
     public Oyuncu() {
-    }
-
-    public int kartSayisi() {
-        int counter = 0;
-        for (int i = 0; i < sporcular.size(); i++) {
-            if (sporcular.get(i) != null) {
-                counter++;
-            }
-        }
-        return counter;
     }
 
     public Oyuncu(String oyucuID, String oyuncuAdi, int skor) {
         this.oyucuID = oyucuID;
         this.oyuncuAdi = oyuncuAdi;
         this.skor = skor;
+    }
+
+    public String getOyucuID() {
+        return oyucuID;
+    }
+
+    public void setOyucuID(String oyucuID) {
+        this.oyucuID = oyucuID;
+    }
+
+    public String getOyuncuAdi() {
+        return oyuncuAdi;
+    }
+
+    public void setOyuncuAdi(String oyuncuAdi) {
+        this.oyuncuAdi = oyuncuAdi;
     }
 
     public int SkorGoster() {
@@ -50,7 +48,7 @@ public abstract class Oyuncu {
         this.skor = skor;
     }
 
-    public int KartSec(int deger) {
-        return -1;
-    }
+    public abstract int KartSec(int deger);
+
+    public abstract void kartKullan(Sporcu sporcu);
 }

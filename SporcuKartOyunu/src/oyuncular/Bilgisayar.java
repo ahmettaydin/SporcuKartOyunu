@@ -12,12 +12,6 @@ public class Bilgisayar extends Oyuncu {
         super(oyucuID, oyuncuAdi, skor);
     }
 
-    public void kartKullan(Sporcu sporcu) {
-
-        sporcu.setKartKullanildiMi(true);
-
-    }
-
     @Override
     public int KartSec(int deger) {
 
@@ -50,5 +44,10 @@ public class Bilgisayar extends Oyuncu {
 
         }
 
+    }
+
+    @Override
+    public void kartKullan(Sporcu sporcu) {
+        sporcu.setKartKullanildiMi(true);
     }
 }

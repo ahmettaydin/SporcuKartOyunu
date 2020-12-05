@@ -13,6 +13,7 @@ public abstract class Sporcu {
     public void setResimYolu(String resimYolu) {
         this.resimYolu = resimYolu;
     }
+    
     private boolean kartKullanildiMi;
 
     public boolean isKartKullanildiMi() {

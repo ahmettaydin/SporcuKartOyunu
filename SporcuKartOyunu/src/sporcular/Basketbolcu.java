@@ -24,8 +24,6 @@ public class Basketbolcu extends Sporcu {
         }
     }
 
-    boolean kartKullanildiMi;
-
     public int getIkilik() {
         return ikilik;
     }

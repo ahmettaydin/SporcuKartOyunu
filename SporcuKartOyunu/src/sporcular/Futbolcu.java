@@ -24,8 +24,6 @@ public class Futbolcu extends Sporcu {
         }
     }
 
-    boolean kartKullanildiMi;
-
     public int getPenalti() {
         return penalti;
     }

@@ -373,6 +373,7 @@ public class Game extends javax.swing.JFrame {
     private void btnKullanici3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici3ActionPerformed
 
         if (futbolcuMu || sonKartMi()) {
+            kullanici.KartSec(2);
             kullaniciKartAt(2);
             int i = bilgisayar.KartSec(0);
             bilgisayarKartAt(i);
@@ -384,13 +385,12 @@ public class Game extends javax.swing.JFrame {
         } else {
             lblUyari.setText("Lütfen bir basketbolcu kartı atınız.");
         }
-
-// TODO add your handling code here:
     }//GEN-LAST:event_btnKullanici3ActionPerformed
 
     private void btnKullanici1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici1ActionPerformed
 
         if (futbolcuMu || sonKartMi()) {
+            kullanici.KartSec(0);
             kullaniciKartAt(0);
 
             int i = bilgisayar.KartSec(0);
@@ -403,14 +403,12 @@ public class Game extends javax.swing.JFrame {
         } else {
             lblUyari.setText("Lütfen bir basketbolcu kartı atınız.");
         }
-
-
     }//GEN-LAST:event_btnKullanici1ActionPerformed
 
     private void btnKullanici2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici2ActionPerformed
 
         if (futbolcuMu || sonKartMi()) {
-
+            kullanici.KartSec(1);
             kullaniciKartAt(1);
 
             int i = bilgisayar.KartSec(0);
@@ -423,12 +421,12 @@ public class Game extends javax.swing.JFrame {
         } else {
             lblUyari.setText("Lütfen bir basketbolcu kartı atınız.");
         }
-
     }//GEN-LAST:event_btnKullanici2ActionPerformed
 
     private void btnKullanici4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici4ActionPerformed
 
         if (futbolcuMu || sonKartMi()) {
+            kullanici.KartSec(3);
             kullaniciKartAt(3);
             int i = bilgisayar.KartSec(0);
             bilgisayarKartAt(i);
@@ -440,12 +438,12 @@ public class Game extends javax.swing.JFrame {
         } else {
             lblUyari.setText("Lütfen bir basketbolcu kartı atınız.");
         }
-
     }//GEN-LAST:event_btnKullanici4ActionPerformed
 
     private void btnKullanici5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici5ActionPerformed
 
         if (!futbolcuMu || sonKartMi()) {
+            kullanici.KartSec(4);
             kullaniciKartAt(4);
             int i = bilgisayar.KartSec(1);
             bilgisayarKartAt(i);
@@ -462,6 +460,7 @@ public class Game extends javax.swing.JFrame {
     private void btnKullanici6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici6ActionPerformed
 
         if (!futbolcuMu || sonKartMi()) {
+            kullanici.KartSec(5);
             kullaniciKartAt(5);
 
             int i = bilgisayar.KartSec(1);
@@ -474,13 +473,12 @@ public class Game extends javax.swing.JFrame {
         } else {
             lblUyari.setText("Lütfen bir futbolcu kartı atınız.");
         }
-
     }//GEN-LAST:event_btnKullanici6ActionPerformed
 
     private void btnKullanici7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici7ActionPerformed
 
         if (!futbolcuMu || sonKartMi()) {
-
+            kullanici.KartSec(6);
             kullaniciKartAt(6);
             int i = bilgisayar.KartSec(1);
             bilgisayarKartAt(i);
@@ -492,13 +490,12 @@ public class Game extends javax.swing.JFrame {
         } else {
             lblUyari.setText("Lütfen bir futbolcu kartı atınız.");
         }
-
     }//GEN-LAST:event_btnKullanici7ActionPerformed
 
     private void btnKullanici8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKullanici8ActionPerformed
-        // TODO add your handling code here:
 
         if (!futbolcuMu || sonKartMi()) {
+            kullanici.KartSec(7);
             kullaniciKartAt(7);
             int i = bilgisayar.KartSec(1);
             bilgisayarKartAt(i);
@@ -700,6 +697,7 @@ public class Game extends javax.swing.JFrame {
             default:
                 break;
         }
+        kullanici.sporcular.get(i).setKartKullanildiMi(false);
         btnKullaniciKarsilasma.setIcon(null);
     }
 
