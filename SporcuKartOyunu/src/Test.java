@@ -1,12 +1,13 @@
+
 import sporcular.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import oyuncular.*;
 
 public class Test {
+
     public static void main(String[] args) {
-       
-        
+
         Futbolcu messi = new Futbolcu("Lionel Messi", "Barcelona", "images/messi.png");
         Futbolcu ronaldo = new Futbolcu("Christiano Ronaldo", "Juventus", "images/ronaldo.png");
         Futbolcu carlos = new Futbolcu("Roberto Carlos", "Fenerbahçe", "images/carlos.png");
@@ -15,39 +16,39 @@ public class Test {
         Futbolcu feyyaz = new Futbolcu("Feyyaz Uçar", "Galatasaray", "images/feyyaz.png");
         Futbolcu metin = new Futbolcu("Metin Oktay", "Galatasaray", "images/metin.png");
         Futbolcu suarez = new Futbolcu("Luis Suarez", "Barcelona", "images/suarez.png");
-        
+
         messi.setPenalti(100);
         messi.setSerbestAtis(75);
         messi.setKaleciKarsiKarsiya(90);
-        
+
         ronaldo.setPenalti(100);
         ronaldo.setSerbestAtis(90);
         ronaldo.setKaleciKarsiKarsiya(85);
-        
+
         carlos.setPenalti(80);
         carlos.setSerbestAtis(100);
         carlos.setKaleciKarsiKarsiya(65);
-        
+
         neymar.setPenalti(90);
         neymar.setSerbestAtis(80);
         neymar.setKaleciKarsiKarsiya(100);
-        
+
         robben.setPenalti(85);
         robben.setSerbestAtis(95);
         robben.setKaleciKarsiKarsiya(90);
-        
+
         feyyaz.setPenalti(95);
         feyyaz.setSerbestAtis(80);
         feyyaz.setKaleciKarsiKarsiya(80);
-        
+
         metin.setPenalti(90);
         metin.setSerbestAtis(85);
         metin.setKaleciKarsiKarsiya(95);
-        
+
         suarez.setPenalti(75);
         suarez.setSerbestAtis(70);
         suarez.setKaleciKarsiKarsiya(75);
-        
+
         Basketbolcu harden = new Basketbolcu("James Harden", "Housten Rockets", "images/harden.png");
         Basketbolcu lebron = new Basketbolcu("Lebron James", "LA Lakers", "images/lebron.png");
         Basketbolcu kobe = new Basketbolcu("Kobe Bryant", "LA Lakers", "images/kobe.png");
@@ -56,11 +57,11 @@ public class Test {
         Basketbolcu jordan = new Basketbolcu("Michael Jordan", "Chicago Bulls", "images/jordan.png");
         Basketbolcu cedi = new Basketbolcu("Cedi Osman", "Cleveland Cavailers", "images/cedi.png");
         Basketbolcu luka = new Basketbolcu("Luka Doncic", "Dallas Mavericks", "images/doncic.png");
-        
+
         harden.setIkilik(70);
         harden.setUcluk(85);
         harden.setSerbestAtis(65);
-        
+
         lebron.setIkilik(95);
         lebron.setUcluk(90);
         lebron.setSerbestAtis(100);
@@ -80,7 +81,7 @@ public class Test {
         jordan.setIkilik(100);
         jordan.setUcluk(80);
         jordan.setSerbestAtis(95);
-       
+
         cedi.setIkilik(85);
         cedi.setUcluk(70);
         cedi.setSerbestAtis(75);
@@ -88,7 +89,7 @@ public class Test {
         luka.setIkilik(90);
         luka.setUcluk(95);
         luka.setSerbestAtis(60);
-       
+
         ArrayList<Sporcu> futbolcular = new ArrayList<Sporcu>();
         futbolcular.add(messi);
         futbolcular.add(ronaldo);
@@ -98,7 +99,7 @@ public class Test {
         futbolcular.add(feyyaz);
         futbolcular.add(metin);
         futbolcular.add(suarez);
-        
+
         ArrayList<Sporcu> basketbolcular = new ArrayList<Sporcu>();
         basketbolcular.add(harden);
         basketbolcular.add(lebron);
@@ -108,25 +109,25 @@ public class Test {
         basketbolcular.add(jordan);
         basketbolcular.add(cedi);
         basketbolcular.add(luka);
-        
+
         Collections.shuffle(futbolcular);
         Collections.shuffle(basketbolcular);
-        
-        Kullanici kullanici=new Kullanici();
-        Bilgisayar bilgisayar =new Bilgisayar();
-        
-        for(int i=0;i<8;i++){
-            if(i<4){
+
+        Kullanici kullanici = new Kullanici("0", "Kullanıcı", 0);
+        Bilgisayar bilgisayar = new Bilgisayar("1", "Bilgisayar", 0);
+
+        for (int i = 0; i < 8; i++) {
+            if (i < 4) {
                 kullanici.sporcular.add(futbolcular.get(i));
                 bilgisayar.sporcular.add(basketbolcular.get(i));
-            }else{
+            } else {
                 kullanici.sporcular.add(basketbolcular.get(i));
                 bilgisayar.sporcular.add(futbolcular.get(i));
             }
         }
-        
-        Game game = new Game(kullanici,bilgisayar);
+
+        Game game = new Game(kullanici, bilgisayar);
         game.setVisible(true);
-       
+
     }
 }

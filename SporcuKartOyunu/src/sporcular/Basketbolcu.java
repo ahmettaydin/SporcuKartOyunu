@@ -1,30 +1,29 @@
 package sporcular;
 
 public class Basketbolcu extends Sporcu {
+
     private int ikilik;
     private int ucluk;
     private int serbestAtis;
-    
-    
 
     public Basketbolcu() {
     }
 
     public Basketbolcu(String sporcuIsim, String sporcuTakim, String resimYolu) {
         super(sporcuIsim, sporcuTakim, resimYolu);
-    } 
+    }
 
-    
     @Override
     public int sporcuPuaniGoster(int i) {
-        if(i==0) 
+        if (i == 0) {
             return ikilik;
-        else if(i==1)
+        } else if (i == 1) {
             return ucluk;
-        else
+        } else {
             return serbestAtis;
+        }
     }
-    
+
     boolean kartKullanildiMi;
 
     public int getIkilik() {
@@ -50,6 +49,5 @@ public class Basketbolcu extends Sporcu {
     public void setSerbestAtis(int serbestAtis) {
         this.serbestAtis = serbestAtis;
     }
-    
-    
+
 }

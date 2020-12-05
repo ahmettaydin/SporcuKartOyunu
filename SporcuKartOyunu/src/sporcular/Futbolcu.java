@@ -1,30 +1,29 @@
 package sporcular;
 
-public class Futbolcu extends Sporcu{
+public class Futbolcu extends Sporcu {
 
     private int penalti;
     private int serbestAtis;
     private int kaleciKarsiKarsiya;
-    
-    
-    
+
     public Futbolcu() {
     }
 
     public Futbolcu(String sporcuIsim, String sporcuTakim, String resimYolu) {
         super(sporcuIsim, sporcuTakim, resimYolu);
     }
-    
+
     @Override
     public int sporcuPuaniGoster(int i) {
-        if(i==0) 
+        if (i == 0) {
             return penalti;
-        else if(i==1)
+        } else if (i == 1) {
             return serbestAtis;
-        else
-            return kaleciKarsiKarsiya;    
+        } else {
+            return kaleciKarsiKarsiya;
+        }
     }
-    
+
     boolean kartKullanildiMi;
 
     public int getPenalti() {
@@ -50,6 +49,5 @@ public class Futbolcu extends Sporcu{
     public void setKaleciKarsiKarsiya(int kaleciKarsiKarsiya) {
         this.kaleciKarsiKarsiya = kaleciKarsiKarsiya;
     }
-    
-    
+
 }
