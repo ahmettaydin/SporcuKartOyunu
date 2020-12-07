@@ -379,8 +379,8 @@ public class Test extends javax.swing.JFrame {
             int r = new Random().nextInt(3);
 
             lblOzellik.setText(ozellikSec0(r));
-            karsilastir(r, i, 2);
             futbolcuMu = false;
+            karsilastir(r, i, 2);
         } else {
             lblUyari.setText("Lütfen bir basketbolcu kartı atınız.");
         }
@@ -397,8 +397,8 @@ public class Test extends javax.swing.JFrame {
             int r = new Random().nextInt(3);
 
             lblOzellik.setText(ozellikSec0(r));
-            karsilastir(r, i, 0);
             futbolcuMu = false;
+            karsilastir(r, i, 0);
         } else {
             lblUyari.setText("Lütfen bir basketbolcu kartı atınız.");
         }
@@ -415,8 +415,8 @@ public class Test extends javax.swing.JFrame {
             int r = new Random().nextInt(3);
 
             lblOzellik.setText(ozellikSec0(r));
-            karsilastir(r, i, 1);
             futbolcuMu = false;
+            karsilastir(r, i, 1);
         } else {
             lblUyari.setText("Lütfen bir basketbolcu kartı atınız.");
         }
@@ -432,8 +432,8 @@ public class Test extends javax.swing.JFrame {
             int r = new Random().nextInt(3);
 
             lblOzellik.setText(ozellikSec0(r));
-            karsilastir(r, i, 3);
             futbolcuMu = false;
+            karsilastir(r, i, 3);
         } else {
             lblUyari.setText("Lütfen bir basketbolcu kartı atınız.");
         }
@@ -449,8 +449,8 @@ public class Test extends javax.swing.JFrame {
             int r = new Random().nextInt(3);
 
             lblOzellik.setText(ozellikSec1(r));
-            karsilastir(r, i, 4);
             futbolcuMu = true;
+            karsilastir(r, i, 4);
         } else {
             lblUyari.setText("Lütfen bir futbolcu kartı atınız.");
         }
@@ -467,8 +467,8 @@ public class Test extends javax.swing.JFrame {
             int r = new Random().nextInt(3);
 
             lblOzellik.setText(ozellikSec1(r));
-            karsilastir(r, i, 5);
             futbolcuMu = true;
+            karsilastir(r, i, 5);
         } else {
             lblUyari.setText("Lütfen bir futbolcu kartı atınız.");
         }
@@ -484,8 +484,8 @@ public class Test extends javax.swing.JFrame {
             int r = new Random().nextInt(3);
 
             lblOzellik.setText(ozellikSec1(r));
-            karsilastir(r, i, 6);
             futbolcuMu = true;
+            karsilastir(r, i, 6);
         } else {
             lblUyari.setText("Lütfen bir futbolcu kartı atınız.");
         }
@@ -501,8 +501,8 @@ public class Test extends javax.swing.JFrame {
             int r = new Random().nextInt(3);
 
             lblOzellik.setText(ozellikSec1(r));
-            karsilastir(r, i, 7);
             futbolcuMu = true;
+            karsilastir(r, i, 7);
         } else {
             lblUyari.setText("Lütfen bir futbolcu kartı atınız.");
         }
@@ -625,7 +625,7 @@ public class Test extends javax.swing.JFrame {
         if (kartlarBittiMi() && kullanici.getSkor() == bilgisayar.getSkor()) {
             r = new Random().nextInt(3);
             karsilastir(r, b, k);
-            if(futbolcuMu) {
+            if(!futbolcuMu) {
                 lblOzellik.setText(ozellikSec0(r));
             } else {
                 lblOzellik.setText(ozellikSec1(r));
